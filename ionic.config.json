@@ -1,0 +1,7 @@
+{
+  "name": "NCLE-Assignment ",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
