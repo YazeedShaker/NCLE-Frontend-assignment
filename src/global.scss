@@ -18,20 +18,53 @@
 @import "@ionic/angular/css/typography.css";
 @import "@ionic/angular/css/display.css";
 
-/* Optional CSS utils that can be commented out */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
+//font Variables
+@font-face {
+  font-family: Nunito-Black;
+  font-style: normal;
+  src: url(./assets/fonts/Nunito/Nunito-Black.ttf);
+}
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
+@font-face {
+  font-family: Nunito-BlackItalic;
+  font-style: italic;
+  src: url(./assets/fonts/Nunito/Nunito-Italic.ttf);
+}
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+@font-face {
+  font-family: Nunito-Bold;
+  font-style: bold;
+  src: url(./assets/fonts/Nunito/Nunito-Bold.ttf);
+}
+
+@font-face {
+  font-family: Nunito-Light;
+  font-style: light;
+  src: url(./assets/fonts/Nunito/Nunito-Light.ttf);
+}
+
+@font-face {
+  font-family: Nunito-Medium;
+  font-style: medium;
+  src: url(./assets/fonts/Nunito/Nunito-Medium.ttf);
+}
+//Global Styling Changes
+:root {
+  --ion-font-family: Nunito-Black !important;
+  font-family: var(--ion-font-family);
+  ion-content::part(scroll)::-webkit-scrollbar {
+    display: none;
+  }
+  ion-item {
+    --highlight-color-focused: none;
+    --background-hover: none;
+  }
+}
+
+.ion-text-end {
+  text-align: end;
+}
+
+.ion-text-start {
+  text-align: start;
+}
