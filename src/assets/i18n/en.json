@@ -1,0 +1,94 @@
+{
+  "HOME-PAGE": {
+    "TITLE": "Discover the magic of our surprise box",
+    "SUBTITLE": "Unleash your child's curiosity with our educational subscription box filled with fun and learning.",
+    "BUTTON": "Subscibe Now",
+    "STEPS-SECTION": {
+      "HINT": "Discover",
+      "TITLE": "How It Works: Subscribe and\n Receive Your Surprise Box",
+      "SUBTITLE": "Subscribe to our surprise subscription box and give your child the gift\n of learning. Each month, we curate a box filled with educational\n materials tailored to your child's age and interests."
+    },
+    "FOOTER": {
+      "DESKTOP": {
+        "LINK-ONE": "Privacy Policy",
+        "LINK-TWO": "Terms of Service",
+        "LINK-THREE": "Cookies Settings",
+        "LINK-FOUR": "© 2023 MyEdu. All rights reserved."
+      },
+      "MOBILE": {
+        "LOGO": "Logo",
+        "LINKS": {
+          "LINK-ONE": "Link One",
+          "LINK-TWO": "Link Two",
+          "LINK-THREE": "Link Three",
+          "LINK-FOUR": "Link Four",
+          "LINK-FIVE": "Link Five"
+        },
+        "SUBSCRIPTION": {
+          "TITLE": "Subscribe",
+          "PLACEHOLDER": "Enter your email",
+          "BUTTON": "Subscibe",
+          "CONSENT": "By subscribing you agree to with our Privacy Policy"
+        },
+        "LINK-ONE": "Privacy Policy",
+        "LINK-TWO": "Terms of Service",
+        "LINK-THREE": "Cookies Settings",
+        "LINK-FOUR": "© 2023 Relume. All rights reserved."
+      }
+    }
+  },
+  "SUBSCRIPTION-PAGE": {
+    "TITLE": "Subscribe",
+    "SUBTITLE": "to our Monthly Surprise Box",
+    "FORM": {
+      "TITLE": "Contact Information",
+      "NAME-LABEL": "Your Name",
+      "NAME-PLACEHOLDER": "e.g Osama Alshathri",
+      "NAME-REQUIRED": "Name is required",
+      "NAME-MIN-LENGTH": "Minimum lenght for the name is 3 characters",
+      "EMAIL-LABEL": "Email",
+      "EMAIL-PLACEHOLDER": "Osama@gmail.com",
+      "EMAIL-REQUIRED": "The email is required",
+      "EMAIL-NOT-VALID": "Please enter a valid email format",
+      "CHILD-INFO-TITLE": "Child’s Information",
+      "CHILD-NAME-LABEL": "Child’s Full Name",
+      "CHILD-NAME-PLACEHOLDER": "e.g Sarah Mohammad",
+      "CHILD-DOB-LABEL": "Child’s Date of Birth",
+      "CHILD-DOB-DAY": "Day",
+      "CHILD-DOB-DAY-REQUIRED": "The day is required in the DOB",
+      "CHILD-DOB-MONTH": "Month",
+      "CHILD-DOB-MONTH-REQUIRED": "The month is required in the DOB",
+      "CHILD-DOB-YEAR": "Year",
+      "CHILD-DOB-YEAR-REQUIRED": "The year is required in the DOB",
+      "CHILD-GRADE-LABEL": "Grade",
+      "CHILD-GRADE-PLACEHOLDER": "e.g Grade 2",
+      "CHILD-GRADE-REQUIRED": "Please select a grade",
+      "GENDER-LABEL": "Gender",
+      "BOY": "Boy",
+      "GIRL": "Girl",
+      "TOPIC-LABEL": "As a parent select any 3 topics",
+      "TOPIC-ERROR": "Please select 3 topics at least",
+      "BUTTON": "Continue to payment"
+    },
+    "SUMMARY": {
+      "TITLE": "Summary",
+      "SUBTITLE": "of your Monthly Surprise Box",
+      "PRODUCT-NAME": "Mystery Box",
+      "QUANTITY": "X 1",
+      "SAR": "SAR",
+      "MONTHLY": "Monthly",
+      "SUBTOTAL": "Subtotal",
+      "SHIPPING": "Shipping",
+      "TAXES": "Taxes",
+      "FREE": "Free",
+      "TOTAL": "Total"
+    },
+    "FOOTER": {
+      "LOGO": "Logo",
+      "LINK-ONE": "Overview",
+      "LINK-TWO": "Help",
+      "LINK-THREE": "Privacy",
+      "COPY-RIGHTS": "© 2077 MyEdu"
+    }
+  }
+}

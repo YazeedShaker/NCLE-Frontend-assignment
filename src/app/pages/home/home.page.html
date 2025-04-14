@@ -1,0 +1,109 @@
+<ion-content [fullscreen]="true" class="home-page-container">
+  <div class="home-page-content">
+    <p class="title">{{ 'HOME-PAGE.TITLE' | translate }}</p>
+    <p class="subtitle">{{ 'HOME-PAGE.SUBTITLE' | translate }}</p>
+    <app-subscribe-button></app-subscribe-button>
+    <img src="../../assets/images/png/header-image.png" alt="" />
+  </div>
+
+  <div class="steps-section">
+    <div class="steps-content-container">
+      <span>{{'HOME-PAGE.STEPS-SECTION.HINT' | translate}}</span>
+      <p class="steps-section-title">
+        {{'HOME-PAGE.STEPS-SECTION.TITLE' | translate}}
+      </p>
+      <p class="steps-section-subtitle">
+        {{'HOME-PAGE.STEPS-SECTION.SUBTITLE' | translate}}
+      </p>
+    </div>
+    <app-step-component [stepsArray]="stepsData"></app-step-component>
+    <app-subscribe-button></app-subscribe-button>
+  </div>
+
+  <footer class="desktop-footer">
+    <ion-footer>
+      <ion-toolbar>
+        <ion-grid class="grid-container">
+          <ion-row>
+            <ion-col size="10">
+              <ion-row>
+                <ion-col size="1">
+                  <ion-text>
+                    <a class="footer-link" href="#"
+                      >{{'HOME-PAGE.FOOTER.DESKTOP.LINK-ONE' | translate}}</a
+                    >
+                  </ion-text>
+                </ion-col>
+                <ion-col size="1">
+                  <ion-text>
+                    <a class="footer-link" href="#"
+                      >{{'HOME-PAGE.FOOTER.DESKTOP.LINK-TWO' | translate}}</a
+                    >
+                  </ion-text>
+                </ion-col>
+                <ion-col size="1">
+                  <ion-text>
+                    <a class="footer-link" href="#"
+                      >{{'HOME-PAGE.FOOTER.DESKTOP.LINK-THREE' | translate}}</a
+                    >
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col size="2">
+              <ion-text>
+                <p class="footer-link" id="copyright">
+                  {{'HOME-PAGE.FOOTER.DESKTOP.LINK-FOUR' | translate}}
+                </p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-toolbar>
+    </ion-footer>
+  </footer>
+
+  <footer class="mobile-footer">
+    <ion-footer>
+      <ion-toolbar>
+        <div class="content-container">
+          <h2>{{'HOME-PAGE.FOOTER.MOBILE.LOGO' | translate}}</h2>
+          <div class="links">
+            <p>{{'HOME-PAGE.FOOTER.MOBILE.LINKS.LINK-ONE' | translate}}</p>
+            <p>{{'HOME-PAGE.FOOTER.MOBILE.LINKS.LINK-TWO' | translate}}</p>
+            <p>{{'HOME-PAGE.FOOTER.MOBILE.LINKS.LINK-THREE' | translate}}</p>
+            <p>{{'HOME-PAGE.FOOTER.MOBILE.LINKS.LINK-FOUR' | translate}}</p>
+            <p>{{'HOME-PAGE.FOOTER.MOBILE.LINKS.LINK-FIVE' | translate}}</p>
+          </div>
+          <div class="subscription-conatiner">
+            <p class="subscription-title">
+              {{'HOME-PAGE.FOOTER.MOBILE.SUBSCRIPTION.TITLE' | translate}}
+            </p>
+            <input
+              type="email"
+              [placeholder]="'HOME-PAGE.FOOTER.MOBILE.SUBSCRIPTION.PLACEHOLDER' | translate"
+            />
+            <ion-button class="subscription-btn"
+              >{{'HOME-PAGE.FOOTER.MOBILE.SUBSCRIPTION.BUTTON' |
+              translate}}</ion-button
+            >
+            <p class="subscription-consent">
+              {{'HOME-PAGE.FOOTER.MOBILE.SUBSCRIPTION.CONSENT' | translate}}
+            </p>
+          </div>
+          <hr />
+          <div class="links-container">
+            <a href="#"> {{'HOME-PAGE.FOOTER.MOBILE.LINK-ONE' | translate}}</a>
+            <a href="#"> {{'HOME-PAGE.FOOTER.MOBILE.LINK-TWO' | translate}}</a>
+            <a href="#">
+              {{'HOME-PAGE.FOOTER.MOBILE.LINK-THREE' | translate}}</a
+            >
+            <a class="copy-rights" href="#">
+              {{'HOME-PAGE.FOOTER.MOBILE.LINK-FOUR' | translate}}</a
+            >
+          </div>
+        </div>
+      </ion-toolbar>
+    </ion-footer>
+  </footer>
+</ion-content>

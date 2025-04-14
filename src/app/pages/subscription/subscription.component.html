@@ -1,0 +1,393 @@
+<ion-content [fullscreen]="true">
+  <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()">
+    <div class="subscription-page-container">
+      <ion-grid class="grid-container">
+        <ion-row>
+          <ion-col size="12" size-lg="7" size-md="12" class="form-container">
+            <div class="form-header-content-container">
+              <h3>{{ "SUBSCRIPTION-PAGE.TITLE" | translate }}</h3>
+              <p>{{ "SUBSCRIPTION-PAGE.SUBTITLE" | translate }}</p>
+              <hr />
+            </div>
+            <h4>{{ "SUBSCRIPTION-PAGE.FORM.TITLE" | translate }}</h4>
+            <!-- Name Input -->
+            <ion-item
+              lines="none"
+              [class.ion-invalid]="
+                subscriptionForm.get('name')?.invalid &&
+                subscriptionForm.get('name')?.touched
+              "
+            >
+              <ion-label>{{
+                "SUBSCRIPTION-PAGE.FORM.NAME-LABEL" | translate
+              }}</ion-label>
+              <ion-input
+                formControlName="name"
+                [placeholder]="
+                  'SUBSCRIPTION-PAGE.FORM.NAME-PLACEHOLDER' | translate
+                "
+                type="text"
+              ></ion-input>
+              <ion-note *ngIf="subscriptionForm.get('name')?.touched">
+                <span
+                  *ngIf="subscriptionForm.get('name')?.errors?.['required']"
+                >
+                  {{ "SUBSCRIPTION-PAGE.FORM.NAME-REQUIRED" | translate }}
+                </span>
+                <span
+                  *ngIf="subscriptionForm.get('name')?.errors?.['minlength']"
+                >
+                  {{ "SUBSCRIPTION-PAGE.FORM.NAME-MIN-LENGTH" | translate }}
+                </span>
+              </ion-note>
+            </ion-item>
+
+            <!-- Email Input -->
+            <ion-item
+              lines="none"
+              [class.ion-invalid]="
+                subscriptionForm.get('email')?.invalid &&
+                subscriptionForm.get('email')?.touched
+              "
+            >
+              <ion-label>{{
+                "SUBSCRIPTION-PAGE.FORM.EMAIL-LABEL" | translate
+              }}</ion-label>
+              <ion-input
+                formControlName="email"
+                [placeholder]="
+                  'SUBSCRIPTION-PAGE.FORM.EMAIL-PLACEHOLDER' | translate
+                "
+                type="text"
+              ></ion-input>
+              <ion-note *ngIf="subscriptionForm.get('email')?.touched">
+                <span
+                  *ngIf="subscriptionForm.get('email')?.errors?.['required']"
+                >
+                  {{ "SUBSCRIPTION-PAGE.FORM.EMAIL-REQUIRED" | translate }}
+                </span>
+                <span *ngIf="subscriptionForm.get('email')?.errors?.['email']">
+                  {{ "SUBSCRIPTION-PAGE.FORM.EMAIL-NOT-VALID" | translate }}
+                </span>
+              </ion-note>
+            </ion-item>
+            <br />
+            <h4>{{ "SUBSCRIPTION-PAGE.FORM.CHILD-INFO-TITLE" | translate }}</h4>
+            <!-- Child Name Input -->
+            <ion-item
+              lines="none"
+              [class.ion-invalid]="
+                subscriptionForm.get('childName')?.invalid &&
+                subscriptionForm.get('childName')?.touched
+              "
+            >
+              <ion-label>{{
+                "SUBSCRIPTION-PAGE.FORM.CHILD-NAME-LABEL" | translate
+              }}</ion-label>
+              <ion-input
+                formControlName="childName"
+                [placeholder]="
+                  'SUBSCRIPTION-PAGE.FORM.CHILD-NAME-PLACEHOLDER' | translate
+                "
+                type="text"
+              ></ion-input>
+              <ion-note *ngIf="subscriptionForm.get('childName')?.touched">
+                <span
+                  *ngIf="subscriptionForm.get('childName')?.errors?.['required']"
+                >
+                  {{ "SUBSCRIPTION-PAGE.FORM.NAME-REQUIRED" | translate }}
+                </span>
+                <span
+                  *ngIf="subscriptionForm.get('childName')?.errors?.['minlength']"
+                >
+                  {{ "SUBSCRIPTION-PAGE.FORM.NAME-MIN-LENGTH" | translate }}
+                </span>
+              </ion-note>
+            </ion-item>
+            <br />
+
+            <!-- Date of Birth -->
+            <ion-item-group formGroupName="dob">
+              <ion-label>{{
+                "SUBSCRIPTION-PAGE.FORM.CHILD-DOB-LABEL" | translate
+              }}</ion-label>
+
+              <ion-row>
+                <ion-col size="4">
+                  <ion-item lines="none">
+                    <ion-select
+                      interface="modal"
+                      formControlName="day"
+                      [placeholder]="
+                        'SUBSCRIPTION-PAGE.FORM.CHILD-DOB-DAY' | translate
+                      "
+                    >
+                      <ion-select-option *ngFor="let day of days" [value]="day">
+                        {{ day }}
+                      </ion-select-option>
+                    </ion-select>
+                    <ion-note *ngIf="subscriptionForm.get('dob.day')?.touched">
+                      <span
+                        *ngIf="subscriptionForm.get('dob.day')?.errors?.['required']"
+                      >
+                        {{
+                          "SUBSCRIPTION-PAGE.FORM.CHILD-DOB-DAY-REQUIRED"
+                            | translate
+                        }}
+                      </span>
+                    </ion-note>
+                  </ion-item>
+                </ion-col>
+
+                <ion-col size="4">
+                  <ion-item lines="none">
+                    <ion-select
+                      interface="modal"
+                      formControlName="month"
+                      [placeholder]="
+                        'SUBSCRIPTION-PAGE.FORM.CHILD-DOB-MONTH' | translate
+                      "
+                    >
+                      <ion-select-option
+                        *ngFor="let month of months"
+                        [value]="month"
+                      >
+                        {{ month }}
+                      </ion-select-option>
+                    </ion-select>
+                    <ion-note
+                      *ngIf="subscriptionForm.get('dob.month')?.touched"
+                    >
+                      <span
+                        *ngIf="subscriptionForm.get('dob.month')?.errors?.['required']"
+                      >
+                        {{
+                          "SUBSCRIPTION-PAGE.FORM.CHILD-DOB-MONTH-REQUIRED"
+                            | translate
+                        }}
+                      </span>
+                    </ion-note>
+                  </ion-item>
+                </ion-col>
+
+                <ion-col size="4">
+                  <ion-item lines="none">
+                    <ion-select
+                      interface="modal"
+                      formControlName="year"
+                      [placeholder]="
+                        'SUBSCRIPTION-PAGE.FORM.CHILD-DOB-YEAR' | translate
+                      "
+                    >
+                      <ion-select-option
+                        *ngFor="let year of years"
+                        [value]="year"
+                      >
+                        {{ year }}
+                      </ion-select-option>
+                    </ion-select>
+                    <ion-note *ngIf="subscriptionForm.get('dob.year')?.touched">
+                      <span
+                        *ngIf="subscriptionForm.get('dob.year')?.errors?.['required']"
+                      >
+                        {{
+                          "SUBSCRIPTION-PAGE.FORM.CHILD-DOB-YEAR-REQUIRED"
+                            | translate
+                        }}
+                      </span>
+                    </ion-note>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-item-group>
+
+            <!-- Grade -->
+            <ion-item lines="none">
+              <ion-label>{{
+                "SUBSCRIPTION-PAGE.FORM.CHILD-GRADE-LABEL" | translate
+              }}</ion-label>
+              <ion-select
+                interface="modal"
+                formControlName="grade"
+                [placeholder]="
+                  'SUBSCRIPTION-PAGE.FORM.CHILD-GRADE-PLACEHOLDER' | translate
+                "
+              >
+                <ion-select-option *ngFor="let grade of grades" [value]="grade"
+                  >Grade {{ grade }}</ion-select-option
+                >
+              </ion-select>
+              <ion-note *ngIf="subscriptionForm.get('grade')?.touched">
+                <span
+                  *ngIf="subscriptionForm.get('grade')?.errors?.['required']"
+                >
+                  {{
+                    "SUBSCRIPTION-PAGE.FORM.CHILD-GRADE-REQUIRED" | translate
+                  }}
+                </span>
+              </ion-note>
+            </ion-item>
+
+            <!-- Gender -->
+            <ion-item lines="none">
+              <ion-label>{{
+                "SUBSCRIPTION-PAGE.FORM.GENDER-LABEL" | translate
+              }}</ion-label>
+              <ion-list>
+                <ion-radio-group (ionChange)="handleGenderChange($event)">
+                  <ion-item class="input-style" lines="none">
+                    <ion-radio [value]="'boy'">{{
+                      "SUBSCRIPTION-PAGE.FORM.BOY" | translate
+                    }}</ion-radio>
+                  </ion-item>
+                  <ion-item class="input-style" lines="none">
+                    <ion-radio [value]="'girl'">{{
+                      "SUBSCRIPTION-PAGE.FORM.GIRL" | translate
+                    }}</ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-list>
+            </ion-item>
+            <br />
+
+            <h4>{{ "SUBSCRIPTION-PAGE.FORM.TOPIC-LABEL" | translate }}</h4>
+            <ion-item lines="none">
+              <div class="chips-container">
+                @for (topic of topics; track topic.id) {
+                <ion-chip
+                  [class.selected]="isChipSelected(topic.id)"
+                  [class.disabled]="
+                    !isChipSelected(topic.id) && !canSelectMore()
+                  "
+                  (click)="toggleTopicChip(topic.id)"
+                >
+                  {{ topic.title }}
+                </ion-chip>
+                }
+              </div>
+              <ion-note
+                *ngIf="subscriptionForm.get('topics')?.errors?.['minLength']"
+              >
+                <span>
+                  {{ "SUBSCRIPTION-PAGE.FORM.TOPIC-ERROR" | translate }}
+                </span>
+              </ion-note>
+            </ion-item>
+
+            <button
+              type="submit"
+              [disabled]="!subscriptionForm.valid"
+              class="submit-button desktop-button"
+            >
+              {{ "SUBSCRIPTION-PAGE.FORM.BUTTON" | translate }}
+            </button>
+          </ion-col>
+          <ion-col size="12" size-lg="5" size-md="12" class="summary-container">
+            <h3>{{ "SUBSCRIPTION-PAGE.SUMMARY.TITLE" | translate }}</h3>
+            <p>{{ "SUBSCRIPTION-PAGE.SUMMARY.SUBTITLE" | translate }}</p>
+            <br />
+            <div class="cart-card-container">
+              <ion-grid>
+                <ion-row class="product-row">
+                  <ion-col size="8">{{
+                    "SUBSCRIPTION-PAGE.SUMMARY.PRODUCT-NAME" | translate
+                  }}</ion-col>
+                  <ion-col size="4" class="ion-text-end"
+                    ><span>{{
+                      "SUBSCRIPTION-PAGE.SUMMARY.SAR" | translate
+                    }}</span>
+                    {{ productPrice }}</ion-col
+                  >
+                </ion-row>
+                <ion-row class="quantity-row">
+                  <ion-col size="8">{{
+                    "SUBSCRIPTION-PAGE.SUMMARY.QUANTITY" | translate
+                  }}</ion-col>
+                  <ion-col size="4" class="ion-text-end">{{
+                    "SUBSCRIPTION-PAGE.SUMMARY.MONTHLY" | translate
+                  }}</ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+            <br />
+            <ion-grid class="finances-summary-grid-container">
+              <ion-row>
+                <ion-col>
+                  {{ "SUBSCRIPTION-PAGE.SUMMARY.SUBTOTAL" | translate }}
+                </ion-col>
+                <ion-col class="ion-text-end"
+                  ><span>{{ "SUBSCRIPTION-PAGE.SUMMARY.SAR" | translate }}</span
+                  ><span class="bold">{{ productPrice }}</span></ion-col
+                >
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  {{ "SUBSCRIPTION-PAGE.SUMMARY.SHIPPING" | translate }}
+                </ion-col>
+                <ion-col class="ion-text-end"
+                  ><span class="free">{{
+                    "SUBSCRIPTION-PAGE.SUMMARY.FREE" | translate
+                  }}</span></ion-col
+                >
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  {{ "SUBSCRIPTION-PAGE.SUMMARY.TAXES" | translate }}
+                </ion-col>
+                <ion-col class="ion-text-end">
+                  <span>{{ "SUBSCRIPTION-PAGE.SUMMARY.SAR" | translate }}</span
+                  ><span class="bold">{{
+                    productTaxes | number : "1.1-1"
+                  }}</span>
+                </ion-col>
+              </ion-row>
+              <hr />
+              <ion-row class="total">
+                <ion-col>
+                  <span class="bold">{{
+                    "SUBSCRIPTION-PAGE.SUMMARY.TOTAL" | translate
+                  }}</span>
+                </ion-col>
+                <ion-col class="ion-text-end">
+                  <span>{{ "SUBSCRIPTION-PAGE.SUMMARY.SAR" | translate }}</span
+                  ><span class="bold">{{ productPrice + productTaxes }}</span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <button
+              type="submit"
+              [disabled]="!subscriptionForm.valid"
+              class="submit-button mobile-button"
+            >
+              {{ "SUBSCRIPTION-PAGE.FORM.BUTTON" | translate }}
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </form>
+
+  <footer class="footer-container">
+    <ion-footer>
+      <ion-toolbar>
+        <div class="content-container">
+          <div>
+            <h3 [routerLink]="'/home'">
+              {{ "SUBSCRIPTION-PAGE.FOOTER.LOGO" | translate }}
+            </h3>
+          </div>
+          <div class="links-container">
+            <p>{{ "SUBSCRIPTION-PAGE.FOOTER.LINK-ONE" | translate }}</p>
+            <p>{{ "SUBSCRIPTION-PAGE.FOOTER.LINK-TWO" | translate }}</p>
+            <p>{{ "SUBSCRIPTION-PAGE.FOOTER.LINK-THREE" | translate }}</p>
+          </div>
+          <div>
+            <p class="copy-rights">
+              {{ "SUBSCRIPTION-PAGE.FOOTER.COPY-RIGHTS" | translate }}
+            </p>
+          </div>
+        </div>
+      </ion-toolbar>
+    </ion-footer>
+  </footer>
+</ion-content>
