@@ -1,0 +1,375 @@
+ion-content {
+  --padding-top: var(--ion-safe-area-top, 0);
+  --padding-bottom: var(--ion-safe-area-bottom, 0);
+}
+
+form {
+  min-width: 100%;
+  min-height: 100%;
+
+  .subscription-page-container {
+    background-color: transparent;
+    background-image: url(../../../assets/images/png/subscription-page-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 25% 0 25%;
+
+    @media (min-width: 320px) {
+      padding: 120px 5% 5% 5%;
+    }
+
+    @media (min-width: 375px) {
+      padding: 120px 5% 5% 5%;
+    }
+
+    @media (min-width: 428px) {
+      padding: 120px 5% 5% 5%;
+    }
+
+    @media (min-width: 768px) {
+      padding: 120px 10% 5% 10%;
+    }
+
+    @media (min-width: 1024px) {
+      padding: 120px 15% 5% 15%;
+    }
+
+    @media (min-width: 1280px) {
+      padding: 120px 25% 5% 25%;
+    }
+
+    @media (min-width: 1440px) {
+      padding: 120px 25% 5% 25%;
+    }
+
+    h4,
+    h3 {
+      font-weight: bold;
+    }
+
+    .form-container {
+      padding: 2%;
+      background-color: var(--ion-color-secondary);
+      @media (min-width: 320px) {
+        border-top-right-radius: 24px;
+        border-top-left-radius: 24px;
+      }
+
+      @media (min-width: 375px) {
+        border-top-right-radius: 24px;
+        border-top-left-radius: 24px;
+      }
+
+      @media (min-width: 428px) {
+        border-top-right-radius: 24px;
+        border-top-left-radius: 24px;
+      }
+
+      @media (min-width: 768px) {
+        border-top-right-radius: 24px;
+        border-top-left-radius: 24px;
+      }
+
+      @media (min-width: 1024px) {
+        border-radius: 0;
+        border-top-left-radius: 24px;
+        border-bottom-left-radius: 24px;
+      }
+
+      @media (min-width: 1280px) {
+        border-radius: 0;
+        border-top-left-radius: 24px;
+        border-bottom-left-radius: 24px;
+      }
+
+      @media (min-width: 1440px) {
+        border-radius: 0;
+        border-top-left-radius: 24px;
+        border-bottom-left-radius: 24px;
+      }
+
+      .form-header-content-container {
+        margin: 2% 0;
+        p {
+          font-family: Nunito-Medium;
+        }
+        hr {
+          background-color: var(--ion-color-medium);
+        }
+      }
+
+      ion-item {
+        &::part(native) {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 0;
+        }
+        :hover {
+          --background-hover: none;
+        }
+
+        ion-input {
+          font-family: Nunito-Medium;
+          font-size: 14px;
+          border: 1px solid var(--ion-color-medium);
+          border-radius: 8px;
+          padding: 0 2% !important;
+          &.ion-invalid.ion-touched {
+            border: 1px solid var(--ion-color-danger);
+          }
+        }
+
+        ion-select {
+          font-family: Nunito-Medium;
+          font-size: 14px;
+          border: 1px solid var(--ion-color-medium);
+          border-radius: 8px;
+          padding: 0 2% !important;
+        }
+
+        ion-note {
+          display: block;
+          color: var(--ion-color-danger);
+          font-size: 12px;
+          margin-top: 0.25rem;
+        }
+      }
+
+      ion-label {
+        font-family: Nunito-Light;
+        font-size: 14px;
+        width: 100%;
+      }
+
+      ion-list {
+        width: 100%;
+        ion-radio-group {
+          ::ng-deep.radio-group-wrapper {
+            display: flex;
+            justify-content: space-between;
+            ion-item {
+              width: 49%;
+              ion-radio {
+                padding: 0 2%;
+              }
+            }
+          }
+        }
+      }
+
+      .input-style {
+        font-family: Nunito-Medium;
+        font-size: 14px;
+        border: 1px solid var(--ion-color-medium);
+        border-radius: 8px;
+        padding: 0 0.5% !important;
+      }
+
+      .chips-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 1%;
+
+        &::part(native) {
+          flex-direction: row;
+        }
+        ion-chip {
+          font-family: Nunito-Medium;
+          --background: var(--ion-color-secondary);
+          --color: var(--ion-color-dark);
+          border: 1px solid var(--ion-color-medium);
+          transition: all 0.3s ease;
+          cursor: pointer;
+          margin: 1% 0;
+
+          &.selected {
+            --background: #f4f1fe;
+            --color: var(--ion-color-primary);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05);
+          }
+
+          &.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+          }
+
+          &:not(.disabled):hover {
+            --background: var(--ion-color-primary);
+            --color: var(--ion-color-secondary);
+          }
+        }
+      }
+    }
+
+    .summary-container {
+      background: #f1edfe;
+      padding: 1% 2%;
+      p {
+        font-family: Nunito-Medium;
+      }
+      @media (min-width: 320px) {
+        border-bottom-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+        margin-bottom: 5%;
+      }
+
+      @media (min-width: 375px) {
+        border-bottom-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+        margin-bottom: 5%;
+      }
+
+      @media (min-width: 428px) {
+        border-bottom-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+        margin-bottom: 5%;
+      }
+
+      @media (min-width: 768px) {
+        border-bottom-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+        margin-bottom: 5%;
+      }
+
+      @media (min-width: 1024px) {
+        border-radius: 0;
+        border-top-right-radius: 24px;
+        border-bottom-right-radius: 24px;
+        margin-bottom: 0;
+      }
+
+      @media (min-width: 1280px) {
+        border-radius: 0;
+        border-top-right-radius: 24px;
+        border-bottom-right-radius: 24px;
+        margin-bottom: 0;
+      }
+
+      @media (min-width: 1440px) {
+        border-radius: 0;
+        border-top-right-radius: 24px;
+        border-bottom-right-radius: 24px;
+        margin-bottom: 0;
+      }
+
+      .cart-card-container {
+        min-width: max-content;
+        border-radius: 14px;
+        padding: 2% 4% 15% 4%;
+        background-color: var(--ion-color-secondary);
+        display: flex;
+        justify-content: space-between;
+        .product-row {
+          color: var(--ion-color-tertiary);
+          font-family: Nunito-Bold;
+          span {
+            font-family: Nunito-Medium;
+          }
+        }
+        .quantity-row {
+          font-family: Nunito-Light;
+          color: var(--ion-color-dark);
+        }
+      }
+
+      .finances-summary-grid-container {
+        font-family: Nunito-Medium;
+        span {
+          font-family: Nunito-Light;
+          margin-right: 5px;
+        }
+        .free {
+          color: var(--ion-color-dark);
+        }
+        .bold {
+          font-weight: bold;
+        }
+        hr {
+          margin: 5% 0;
+          background-color: var(--ion-color-medium);
+        }
+        .total {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .submit-button {
+      background-color: var(--ion-color-secondary);
+      color: var(--ion-color-primary);
+      border: 1px solid #896af9;
+      box-shadow: 4px 4px 0px -1px #896af9;
+      border-radius: 16px;
+      width: 100%;
+      padding: 2%;
+      font-size: 23px;
+      font-family: Nunito-Bold;
+      margin: 5% 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:disabled {
+        box-shadow: none;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+
+    .desktop-button {
+      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    .mobile-button {
+      display: none;
+      @media (max-width: 767px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.footer-container {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+
+    ion-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .content-container {
+      color: var(--ion-color-tertiary);
+      padding: 0 3%;
+      display: flex;
+      justify-content: space-between;
+      h3 {
+        cursor: pointer;
+      }
+      .links-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p {
+          margin: 0 5px;
+          font-family: Nunito-Medium;
+          font-size: 16px;
+        }
+      }
+      .copy-rights {
+        font-family: Nunito-Medium;
+        font-size: 16px;
+      }
+    }
+  }
+}
