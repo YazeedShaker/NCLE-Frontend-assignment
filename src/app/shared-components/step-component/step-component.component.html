@@ -1,0 +1,10 @@
+<div class="step-component grid-container">
+  @for (step of stepsArray; track step.id) {
+  <div class="grid-item">
+    <img class="step-image" [src]="step.image" alt="" />
+    <p class="title">{{ step.title }}</p>
+    <p class="title">{{ step.subtitle }}</p>
+    <p class="description">{{ step.description }}</p>
+  </div>
+  }
+</div>
